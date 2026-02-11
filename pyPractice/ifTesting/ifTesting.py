@@ -1,10 +1,14 @@
-cars = ["bmw", "ford", "toyota", "vw"]
+fruit = "apple"
+cars = ["bmw", "Ford", "toyota", "vw"]
 
 for car in cars:
-    if car == "ford":
+    if car.lower() == "ford":
         print(car.upper())
-        cars[car] = "nissan"
+        #cars[car] = "nissan"
     else:
         print(car.title())
 
-print(cars)
+if fruit != "apple":
+    print("This is not an apple")
+else:
+    print("You can eat the apple")
