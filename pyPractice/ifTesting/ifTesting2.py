@@ -8,8 +8,9 @@ else:
     print("You need " + str(yearsTillVoting) + " years until you can vote")
 
 if age < 4:
-    print("Admission is free")
+    price = 0
 elif age > 18:
-    print("You must pay $10")
+    price = 10
 else:
-    print("You must pay $5")
+    price = 5
+print("Your admission price is: $" + str(price))
