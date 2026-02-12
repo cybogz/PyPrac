@@ -1,4 +1,4 @@
-age = 20
+age = 17
 
 if age >= 18:
     print("You are old enough to vote")
@@ -9,8 +9,10 @@ else:
 
 if age < 4:
     price = 0
-elif age > 18:
+elif age < 18:
     price = 10
-else:
+elif age < 65:
+    price = 15
+elif age >= 65:
     price = 5
 print("Your admission price is: $" + str(price))
