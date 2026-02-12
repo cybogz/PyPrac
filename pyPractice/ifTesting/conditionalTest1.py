@@ -1,8 +1,10 @@
-car = "toyota"
+car = "datsun"
 fruit = "apple"
 music = "Metal"
 city = "San Diego"
 testingNumber = 10
+listOfCars = ["bmw", "ford", "toyota", "vw"]
+
 
 print("Is car == to 'toyota? I think its true")
 print(car == "toyota")
@@ -23,4 +25,13 @@ for numbers in range(1,10):
         print("Bingo")
 
 if fruit != "peaches":
-    print("\nYou have bad taste in fruit")
+    print("\nYou have bad taste in fruit\n")
+
+print("toyota" in listOfCars)
+
+for newCar in listOfCars:
+    if newCar == "vw":
+        print("Youve got a jetta\n")
+
+if car not in listOfCars:
+    print(car + " is not on the list")
