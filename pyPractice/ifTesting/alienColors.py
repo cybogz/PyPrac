@@ -1,8 +1,10 @@
-alien_color = "green"
+alien_color = "red"
 
 if alien_color == "green":
     points = 5
-else:
+elif alien_color == "yellow":
     points = 10
+elif alien_color == "red":
+    points = 15
 
 print("You just earned " + str(points) + " points!")
