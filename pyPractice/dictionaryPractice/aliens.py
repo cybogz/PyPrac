@@ -1,8 +1,15 @@
-alien0 = {'color': 'green', 'points': 5}
-alien1 = {'color': 'yellow', 'points': 10}
-alien2 = {'color': 'red', 'points': 15}
+#Make an empty list to store aliens
+aliens = []
 
-aliens = [alien0, alien1, alien2]
+#create 30 alien dictionaries and append it to the aliens list
+for alienNumber in range(30):
+    alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(alien)
 
-for alien in aliens:
-    print(alien)
+#show the first 5 aliens
+for displayAlien in aliens[:5]:
+    print(displayAlien)
+print("...")
+
+#show how many aliens are in the list
+print("Total number of aliens: " + str(len(aliens)))
