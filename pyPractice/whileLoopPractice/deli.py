@@ -1,11 +1,10 @@
-sandwichOrders = ["ham", "pastrami","turkey", "blt", "pastrami"]
+sandwichOrders = ["ham", "pastrami", "turkey", "blt", "pastrami"]
 finishedSandwiches = []
-
-while "pastrami" in sandwichOrders:
-    sandwichOrders.remove("pastrami")
 
 while sandwichOrders:
     userSandwich = sandwichOrders.pop()
+    if userSandwich == "pastrami":
+        continue
     print("I made your " + userSandwich)
     finishedSandwiches.append(userSandwich)
 
