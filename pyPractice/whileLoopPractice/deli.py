@@ -1,5 +1,8 @@
-sandwichOrders = ["ham sandwich", "turkey sandwich", "blt sandwich", "pastrami sandwich"]
+sandwichOrders = ["ham", "pastrami","turkey", "blt", "pastrami"]
 finishedSandwiches = []
+
+while "pastrami" in sandwichOrders:
+    sandwichOrders.remove("pastrami")
 
 while sandwichOrders:
     userSandwich = sandwichOrders.pop()
