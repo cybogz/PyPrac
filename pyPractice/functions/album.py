@@ -1,13 +1,21 @@
-def makeAlbum(artistName, albumTitle, tracks = ''):
+def makeAlbum(artistName, albumTitle):
     albumDic = {'name': artistName, 'album': albumTitle}
-
-    if tracks:
-        albumDic['tracks'] = tracks
     return albumDic
+   
+    
+while True:
+    print("Please enter the artists name and album")
+    print("Enter 'q' at anytime to quick")
 
-createAlbum = makeAlbum("megadeth", "rust in peace")
-print(createAlbum)
+    userArtist = input("Artist Name: ")
+    if userArtist == 'q':
+        break
 
-createAlbum = makeAlbum("tool", "lateralus", 9)
-print(createAlbum)
+    userAlbum = input("Album name: ")
+    if userAlbum == 'q':
+        break
 
+    createdAlbum = makeAlbum(userArtist, userAlbum)
+    print(createdAlbum)
+
+print(makeAlbum)
