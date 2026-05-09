@@ -18,4 +18,3 @@ while True:
     createdAlbum = makeAlbum(userArtist, userAlbum)
     print(createdAlbum)
 
-print(makeAlbum)
