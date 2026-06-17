@@ -32,23 +32,29 @@ class Cars():
 
 class Battery():
     """creates an electrical car battery class"""
-    def __init__(self, batter_size=70):
-        self.battery_size = batter_size
+    def __init__(self, battery_size=70):
+        self.battery_size = battery_size
     
-    def describe_battery(self):
-        print("This car has a " + str(self.battery_size) + " KWh battery") 
+    def get_battery_range(self):
+        """prints a statement about the range of the battery chosen"""
+        if self.battery_size == 70:
+            range = 240
+        if self.battery_size == 80:
+            range = 270
+        message = "this car can go " + str(range) + " miles on a full charge"
+        print(message)
 
 class ElectricCar(Cars):
     """represents the aspects of a electric car specifically"""
     def __init__(self, make, model, year):
         """Initialize attributes of the parent class. Then initialize attributes specific to an electric car"""
         super().__init__(make, model, year)
-        self.battery = Battery()
+        self.battery = Battery(80)
 
 inheri_electric_class = ElectricCar('toyota', 'prius', 2026)
-print(inheri_electric_class.get_descriptive_name())
+#print(inheri_electric_class.get_descriptive_name())
 
-inheri_electric_class.battery.describe_battery()
+inheri_electric_class.battery.get_battery_range()
 
 
 
