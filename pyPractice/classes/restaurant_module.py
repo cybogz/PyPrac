@@ -8,7 +8,7 @@ class Restaurant():
     def describe_restaurant(self):
         
         print("The name of the resturant is " + self.restaurant_name)
-        print("They are " + self.cuisine_type + " food")
+        print("They are " + self.cuisine_type + " food\n")
 
     def open_restaurant(self):
 
@@ -18,5 +18,10 @@ class IceCreamStand(Restaurant):
 
     def __init__(self, restaurant_name, cuisine_type):
 
-        super().__init__(self, restaurant_name, cuisine_type)
+        super().__init__(restaurant_name, cuisine_type)
         self.flavors = ["chocolate", "vanilla", "strawberry", "oreo"]
+
+    def show_flavors(self):
+        print("These are the ice cream flavors you can choose: \n")
+        for flavor in self.flavors:
+            print(flavor)
