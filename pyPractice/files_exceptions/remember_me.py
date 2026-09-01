@@ -19,10 +19,13 @@ def get_new_username():
 
 def greet_user():
     username = get__stored_username()
-    if username:
+    correct_username = input(f"Type 'yes' if {username} your correct username. If not, type 'no' and we will make you enter a new username: ")
+    if correct_username == "yes":
         print("welcome back " + username)
-    else:
+    elif correct_username == 'no':
         username = get_new_username()
         print("welcome back " + username)
+    else:
+        print("Type yes or no")
 
 greet_user()
