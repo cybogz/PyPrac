@@ -17,6 +17,7 @@ def run_game():
     while True:
 
         gf.check_events(ship)
+        ship.update() # The ships position will update after keyboard events and before screen update
         gf.update_screen(ai_settings, screen, ship)
 
 run_game()
