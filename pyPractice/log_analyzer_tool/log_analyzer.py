@@ -1,4 +1,5 @@
-#
+import argparse
+
 
 def message_count(filename):
 
@@ -51,14 +52,12 @@ def display_information(info_count, warning_count, error_count, display_error):
 
 def main():
 
-    filename = "app.log"
+    parser = argparse.ArgumentParser(description="analyze a log file") # creates the parser object
+    parser.add_argument("filename", help="Path to the log file") # what arguments you want
+    args = parser.parse_args() # parses the argument/s
 
-    info_count, warning_count, error_count = message_count(filename)
-    display_error = get_error_messages(filename)
+    info_count, warning_count, error_count = message_count(args.filename) #args.filename is how we access the data in the argument
+    display_error = get_error_messages(args.filename)
     display_information(info_count, warning_count, error_count, display_error)
 
 main()
-#error_messages.append(line.strip())
-
-#for error in error_messages:
-    #print(error)
