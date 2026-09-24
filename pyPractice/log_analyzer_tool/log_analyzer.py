@@ -1,11 +1,15 @@
 import argparse
 
+def user_cli_argument():
+
+    parser = argparse.ArgumentParser(description="analyze a log file") # creates the parser object
+    parser.add_argument("filename", help="Path to the log file") # what arguments you want
+    args = parser.parse_args() # parses the argument/s
+
+    return args.filename
 
 def message_count(filename):
-
-    info_name = "INFO"
-    warning_name = "WARNING"
-    error_name = "ERROR"
+    """gets the count for info, warning, and error in the log file"""
 
     info_count = 0
     warning_count = 0
@@ -13,13 +17,13 @@ def message_count(filename):
 
     with open(filename) as file_object:
         for line in file_object:
-            if info_name in line:
+            if "INFO" in line:
                 info_count += 1
 
-            elif warning_name in line:
+            elif "WARNING" in line:
                 warning_count += 1
 
-            elif error_name in line:
+            elif "ERROR" in line:
                 error_count += 1
 
     return info_count, warning_count, error_count
@@ -52,12 +56,12 @@ def display_information(info_count, warning_count, error_count, display_error):
 
 def main():
 
-    parser = argparse.ArgumentParser(description="analyze a log file") # creates the parser object
-    parser.add_argument("filename", help="Path to the log file") # what arguments you want
-    args = parser.parse_args() # parses the argument/s
+    filename = user_cli_argument()
 
-    info_count, warning_count, error_count = message_count(args.filename) #args.filename is how we access the data in the argument
-    display_error = get_error_messages(args.filename)
+    print("Analyzing: " + filename) 
+
+    info_count, warning_count, error_count = message_count(filename) #args.filename is how we access the data in the argument
+    display_error = get_error_messages(filename)
     display_information(info_count, warning_count, error_count, display_error)
 
 main()
