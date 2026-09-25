@@ -3,7 +3,7 @@ import argparse
 def user_cli_argument():
 
     parser = argparse.ArgumentParser(description="analyze a log file") # creates the parser object
-    parser.add_argument("filename", help="Path to the log file") # what arguments you want
+    parser.add_argument("filename", nargs="?", default="app.log", help="Path to the log file") # what arguments you want
     args = parser.parse_args() # parses the argument/s
 
     return args.filename
