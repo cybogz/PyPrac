@@ -23,14 +23,7 @@ def run_game():
 
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update() # The ships position will update after keyboard events and before screen update
-        bullets.update() # calls bullet.update() for each bullet we place in the group bullets
-
-        # Get rid of bullets that have disappeared
-        for bullet in bullets.copy():
-            if bullet.rect.bottom <= 0:
-                bullets.remove(bullet)
-        #print(len(bullets))
-
+        gf.update_bullets(bullets) #calls update_bullets to get rid of old bullets
         gf.update_screen(ai_settings, screen, ship, bullets)
 
 run_game()
