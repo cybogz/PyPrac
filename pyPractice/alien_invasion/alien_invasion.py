@@ -4,6 +4,7 @@ import game_functions as gf
 from settings import Settings
 from ship import Ship
 from pygame.sprite import Group
+from alien import Alien
 
 def run_game():
     # Initialize game and create screen object
@@ -18,12 +19,15 @@ def run_game():
     # make a group to store bullets in
     bullets = Group()
 
+    # make an alien
+    alien = Alien(ai_settings, screen)
+
     #Start the main loop for the game
     while True:
 
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update() # The ships position will update after keyboard events and before screen update
         gf.update_bullets(bullets) #calls update_bullets to get rid of old bullets
-        gf.update_screen(ai_settings, screen, ship, bullets)
+        gf.update_screen(ai_settings, screen, ship, alien, bullets)
 
 run_game()
